@@ -2,6 +2,7 @@ import {
   incrementAction,
   decrementAction,
   resetAction,
+  withPropsAction,
 } from './../../store/actions';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
@@ -28,6 +29,10 @@ export class TodoViewComponent implements OnInit {
 
   reset() {
     this.store.dispatch(resetAction());
+  }
+
+  withProps() {
+    this.store.dispatch(withPropsAction({ value: 5 }));
   }
   ngOnInit(): void {}
 }
